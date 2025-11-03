@@ -67,6 +67,12 @@ Late Wet (LWS) | F3 | Stress limits crop response |
 
 ## 📈 Visual Outputs
 
+**Treatment Response Plots:**
+
+![](results/nitrogen_response.png)
+
+![](results/cultivar_response.png)
+
 **Split-Plot Layout QC:**
 
 ![](results/DS_splitplot.png)
@@ -74,12 +80,6 @@ Late Wet (LWS) | F3 | Stress limits crop response |
 ![](results/EWS_splitplot.png)
 
 ![](results/LWS_splitplot.png)
-
-**Treatment Response Plots:**
-
-![](results/nitrogen_response.png)
-
-![](results/cultivar_response.png)
 
 ---
 
