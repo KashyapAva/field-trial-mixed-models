@@ -1,7 +1,7 @@
 # Field Trial Mixed Model Analysis (1968–2023)
-**Modeling nitrogen response and cultivar performance across multi-season crop field trials**
+**Modeling nitrogen response and cultivar performance across multi-season rice field trials**
 
-This repository contains an end-to-end agronomy analytics pipeline using linear mixed-effects models to evaluate nitrogen fertilizer response and cultivar performance across 50+ years of field trial data.  
+This repository contains an end-to-end agronomy analytics pipeline that utilizes linear mixed-effects models to evaluate nitrogen fertilizer response and cultivar performance across over 50 years of rice field trial data.  
 
 The analysis demonstrates real-world agricultural statistical workflows used in ag-biotech R&D and precision agriculture programs.
 
@@ -54,7 +54,7 @@ Reporting | RMarkdown, GitHub |
 ### Cultivar Performance
 - **V4** highest and most stable across seasons  
 - **V1** consistently lowest  
-- Differences narrower in wet seasons due to environmental stress
+- Differences are narrower in wet seasons due to environmental stress
 
 ---
 
@@ -74,13 +74,11 @@ Plant **V4** for broad seasonal adaptability; avoid **V1**.
 ## 📈 Visual Outputs
 
 <p align="center">
-<img src="plots/nitrogen_response.png" width="90%"><br>
-<i>Nitrogen response across seasons (EMMs ± 95% CI)</i>
+<img src="results/nitrogen_response.png" width="90%"><br>
 </p>
 
 <p align="center">
-<img src="plots/cultivar_response.png" width="90%"><br>
-<i>Cultivar performance by season (EMMs ± 95% CI)</i>
+<img src="results/cultivar_response.png" width="90%"><br>
 </p>
 
 ---
