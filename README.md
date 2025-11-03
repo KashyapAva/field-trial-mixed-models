@@ -117,6 +117,11 @@ It showcases expertise in:
 - Mixed-model statistical inference
 - Field trial reporting & visualization
 - Translating science → agronomy recommendations
+---
+
+## Trial Data Management Considerations:
+
+Field trial data often originates from small-plot layout systems (e.g., ARM/JMP) and increasingly integrates precision-ag measurements. While this project focuses on statistical analysis in R, I have experience with production-grade data modeling and pipeline development (dbt/DuckDB, SQL, Power BI), which applies to scalable trial data infrastructure.
 
 ---
 
