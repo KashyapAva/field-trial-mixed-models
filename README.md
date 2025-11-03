@@ -1,85 +1,85 @@
-# Field Trial Mixed Model Analysis (1968–2023)
-**Modeling nitrogen response and cultivar performance across multi-season rice field trials**
+# Field Trial Mixed-Model Analysis (1968–2023)
+**Evaluating nitrogen response & cultivar performance in long-term irrigated rice trials**
 
-This repository contains an end-to-end agronomy analytics pipeline that utilizes linear mixed-effects models to evaluate nitrogen fertilizer response and cultivar performance across over 50 years of rice field trial data.  
-
-The analysis demonstrates real-world agricultural statistical workflows used in ag-biotech R&D and precision agriculture programs.
+This project presents an agronomic statistics workflow using linear mixed-effects models over more than 50 years of irrigated rice field trials.  
+It reflects the analytical practices used in crop R&D, biological product evaluation, and field trial analytics.
 
 ---
 
 ## 📌 Objectives
 
-- Quantify yield response to nitrogen fertilizer across seasons
-- Evaluate cultivar performance and stability across environments
-- Correctly model a multi-year, multi-season **RCBD split-plot field design**
-- Derive agronomic recommendations from statistical evidence
-- Produce publication-quality visuals and interpretation
+- Model grain yield response to nitrogen across seasons  
+- Evaluate cultivar performance and stability across environments  
+- Correctly represent a multi-year **split-plot RCBD**  
+- Generate agronomic insights backed by mixed-model inference  
+- Perform field-layout QC to evaluate block/subplot structure  
 
 ---
 
 ## 🧪 Experimental Design
 
-| Component | Description |
+| Feature | Description |
 |---|---|
-Design | Split-plot RCBD |
+Crop | Irrigated rice (triple-crop system) |
 Years | 1968–2023 |
-Main plot | Nitrogen rate *(Afactor)* |
-Sub plot | Cultivar *(Bfactor)* |
-Blocks | 4 reps per year |
-Seasons | DS, EWS, LWS |
-Response | Grain yield (kg/ha) |
-
-**Random Effects:** Year, Year × Rep × Nitrogen  
-**Fixed Effects:** Season × Nitrogen + Season × Cultivar
-
----
-
-## 🧰 Tech Stack
-
-| Category | Tools |
-|---|---|
-Statistical Modeling | `lme4`, `lmerTest`, `emmeans` |
-Data Manipulation | `dplyr`, `data.table` |
-Visualization | `ggplot2`, `patchwork` |
-Reporting | RMarkdown, GitHub |
+Design | Split-plot RCBD |
+Main plot (A) | Nitrogen rate (F1–F4) |
+Subplot (B) | Cultivar (V1–V6) |
+Blocks | 4 replications per year |
+Seasons | DS (Dry), EWS, LWS |
+Outcome | Grain yield (kg/ha) |
+Model | `Season × A × B + (1 | Year/Rep)` |
 
 ---
 
-## 📊 Key Results
+## 🧰 Software
 
-### Nitrogen Response
-- Dry season: strong yield increase up to **F4**
-- Wet seasons: **yield plateau at F3** (no benefit from F4)
+- **R**: lme4, lmerTest, emmeans, dplyr, ggplot2  
+- Reporting: RMarkdown
 
-### Cultivar Performance
-- **V4** highest and most stable across seasons  
-- **V1** consistently lowest  
-- Differences are narrower in wet seasons due to environmental stress
+---
+
+## 📊 Key Findings
+
+### Nitrogen
+- Strongest nitrogen effect in **Dry Season**
+- **Plateau beyond F3** in wet seasons  
+- Lower N-use efficiency under wet-season stress (humidity, disease pressure, radiation limits)
+
+### Cultivar
+- **V4** consistently highest & stable  
+- **V1** lowest performing  
+- Genetic differences are expressed most strongly in DS conditions
 
 ---
 
 ## 🌾 Agronomic Recommendations
 
-| Season | Optimal N | Insight |
+| Season | Recommended N | Insight |
 |---|---|---|
-Dry | **F4** | Highest N efficiency & yield gain |
-Early Wet | **F3** | Output plateau; avoid excess N |
-Late Wet | **F3** | Same plateau effect |
+Dry (DS) | F4 | Most favorable environment and highest N efficiency |
+Early Wet (EWS) | F3 | Marginal return beyond F3 |
+Late Wet (LWS) | F3 | Stress limits crop response |
 
-**Cultivar Recommendation:**  
-Plant **V4** for broad seasonal adaptability; avoid **V1**.
+**Cultivar Recommendation:** Prefer **V4**; avoid **V1**.
 
 ---
 
 ## 📈 Visual Outputs
 
-<p align="center">
-<img src="results/nitrogen_response.png" width="90%"><br>
-</p>
+**Split-Plot Layout QC:**
 
-<p align="center">
-<img src="results/cultivar_response.png" width="90%"><br>
-</p>
+![](results/DS_splitplot.png)
+
+![](results/EWS_splitplot.png)
+
+![](results/LWS_splitplot.png)
+
+**Treatment Response Plots:**
+
+![](results/nitrogen_response.png)
+
+![](results/cultivar_response.png)
 
 ---
 
@@ -99,29 +99,6 @@ Plant **V4** for broad seasonal adaptability; avoid **V1**.
 - ✅ Field-zone nitrogen recommendation maps
 - ⏳ Random-slope G×E stability modeling (AMMI / GGE)
 - ⏳ Power analysis for trial design efficiency
-
----
-
-## 🚀 Why This Project Matters
-
-This analysis mirrors real ag-biotech workflows used for:
-
-- Biological product evaluation
-- Nitrogen-use efficiency screening
-- Cultivar stability assessments
-- On-farm precision agriculture decision-support
-
-It showcases expertise in:
-
-- Experimental design interpretation
-- Mixed-model statistical inference
-- Field trial reporting & visualization
-- Translating science → agronomy recommendations
----
-
-## Trial Data Management Considerations:
-
-Field trial data often originates from small-plot layout systems (e.g., ARM/JMP) and increasingly integrates precision-ag measurements. While this project focuses on statistical analysis in R, I have experience with production-grade data modeling and pipeline development (dbt/DuckDB, SQL, Power BI), which applies to scalable trial data infrastructure.
 
 ---
 
